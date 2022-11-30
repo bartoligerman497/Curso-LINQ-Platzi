@@ -1,7 +1,7 @@
 ﻿LinqQueries queries = new LinqQueries();
 
 //Toda la coleccion
-//ImprimirValores(queries.TodaLaColeccion());
+ImprimirValores(queries.TodaLaColeccion());
 
 //Libros despues del 2000
 //ImprimirValores(queries.LibrosDespuesdel2000());
@@ -68,7 +68,7 @@
 //ImprimirDiccionario(diccionarioLookup, 'Z');
 
 // libros filtradaor con la clausula join 
-ImprimirValores(queries.LibrosDespuesdel2005conmasde500Pags());
+//ImprimirValores(queries.LibrosDespuesdel2005conmasde500Pags());
 
 
 void ImprimirValores(IEnumerable<Book> listadelibros)
