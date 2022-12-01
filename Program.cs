@@ -60,6 +60,9 @@ ImprimirValores(queries.TodaLaColeccion());
 //el promedio de caracteres del los titulos de los libros
 //Console.WriteLine($"promedio caracteres de los titulos: {queries.PromedioCaracteresTitulo()}");
 
+//Promedio de numero de páginas mayores a 0
+// Console.WriteLine($"El promedio de número de paginas que son mayores a cero: {queries.PromedioDePaginas()}");
+
 //Libros publicados a partir del 2000 agrupados por ano
 //ImprimirGrupo(queries.LibrosDespuesdel2000AgrupadosporAno());
 

@@ -149,21 +149,29 @@ public class LinqQueries
     public string TitulosDeLibrosDespuesDel2015Concatenados()
     {
         return librosCollection
-                .Where(p=> p.PublishedDate.Year > 2015)
-                .Aggregate("", (TitulosLibros, next) =>
-                {
-                    if(TitulosLibros != string.Empty)
-                        TitulosLibros += " - " + next.Title;
-                    else
-                        TitulosLibros += next.Title;
+        .Where(p=> p.PublishedDate.Year > 2015)
+        .Aggregate("", (TitulosLibros, next) =>
+        {
+            if(TitulosLibros != string.Empty)
+                TitulosLibros += " - " + next.Title;
+            else
+                TitulosLibros += next.Title;
 
-                    return TitulosLibros;
-                });
+            return TitulosLibros;
+        });
     }
 
     public double PromedioCaracteresTitulo()
     {
-        return librosCollection.Average(p=> p.Title.Length);
+        return librosCollection
+        .Average(p=> p.Title.Length);
+    }
+
+    public double PromedioDePaginas()
+    {
+        return librosCollection
+        .Where(p=> p.PageCount!=0)
+        .Average(p=> p.PageCount);
     }
 
     public IEnumerable<IGrouping<int, Book>> LibrosDespuesdel2000AgrupadosporAno()
