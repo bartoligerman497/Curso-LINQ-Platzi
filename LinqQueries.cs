@@ -64,8 +64,13 @@ public class LinqQueries
     {
         return librosCollection
         .Where(p=> p.Categories.Contains("Java"))
-        .OrderBy(p=> p.PublishedDate)
-        .TakeLast(3);
+        .OrderByDescending(p=> p.PublishedDate)
+        .Take(3);
+
+        // return librosCollection
+        // .Where(p=> p.Categories.Contains("Java"))
+        // .OrderBy(p=> p.PublishedDate)
+        // .TakeLast(3);
     }
 
     public IEnumerable<Book> TerceryCuartoLibroDeMas400Pag()
