@@ -176,7 +176,9 @@ public class LinqQueries
 
     public IEnumerable<IGrouping<int, Book>> LibrosDespuesdel2000AgrupadosporAno()
     {
-        return librosCollection.Where(p=> p.PublishedDate.Year >= 2000).GroupBy(p=> p.PublishedDate.Year);
+        return librosCollection
+        .Where(p=> p.PublishedDate.Year >= 2000)
+        .GroupBy(p=> p.PublishedDate.Year);
     }
 
     public ILookup<char, Book> DiccionariosDeLibrosPorLetra()
