@@ -106,38 +106,44 @@ public class LinqQueries
 
     public int CantidadDeLibrosEntre200y500Pag()
     {
-        return librosCollection.Where(p=> p.PageCount>=200 && p.PageCount<=500).Count() ;
+        return librosCollection
+        .Where(p=> p.PageCount>=200 && p.PageCount<=500)
+        .Count() ;
 
-        
         // return librosCollection
         // .LongCount(p=> p.PageCount>=200 && p.PageCount<=500);
-
-
     }
 
     public DateTime FechaDePublicacionMenor()
     {
-        return librosCollection.Min(p=> p.PublishedDate);
+        return librosCollection
+        .Min(p=> p.PublishedDate);
     }
 
     public int NumeroDePagLibroMayor()
     {
-        return librosCollection.Max(p=> p.PageCount);
+        return librosCollection
+        .Max(p=> p.PageCount);
     }
 
     public Book LibroConMenorNumeroDePaginas()
     {
-        return librosCollection.Where(p=> p.PageCount>0).MinBy(p=> p.PageCount);
+        return librosCollection
+        .Where(p=> p.PageCount>0)
+        .MinBy(p=> p.PageCount);
     }
 
     public Book LibroConFechaPublicacionMasReciente()
     {
-        return librosCollection.MaxBy(p=> p.PublishedDate);
+        return librosCollection
+        .MaxBy(p=> p.PublishedDate);
     }
 
     public int SumaDeTodasLasPaginasLibrosEntre0y500()
     {
-        return librosCollection.Where(p=> p.PageCount >= 0 && p.PageCount <=500).Sum(p=> p.PageCount);
+        return librosCollection
+        .Where(p=> p.PageCount >= 0 && p.PageCount <=500)
+        .Sum(p=> p.PageCount);
     }
     
     public string TitulosDeLibrosDespuesDel2015Concatenados()
